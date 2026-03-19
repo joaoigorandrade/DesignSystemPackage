@@ -10,6 +10,7 @@ let package = Package(
     targets: [
         .target(
             name: "DesignSystem",
+            exclude: ["Components/FABView.md"],
             resources: [.process("Resources")]
         )
     ]

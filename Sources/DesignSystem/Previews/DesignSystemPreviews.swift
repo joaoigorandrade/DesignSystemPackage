@@ -42,3 +42,29 @@ struct DSTextField_Previews: PreviewProvider {
         .previewLayout(.sizeThatFits)
     }
 }
+
+struct FABView_Previews: PreviewProvider {
+    static var previews: some View {
+        FABPreviewContainer()
+    }
+}
+
+private struct FABPreviewContainer: View {
+    @State private var isExpanded = false
+
+    var body: some View {
+        ZStack {
+            Color.backgroundGrey.ignoresSafeArea()
+
+            FABView(
+                isExpanded: $isExpanded,
+                actionItems: [
+                    .challenge { },
+                    .expense(state: .error("Expense is unavailable for your current role.")) { },
+                    .withdrawal(state: .error("Withdrawal requires a verified account.")) { }
+                ]
+            )
+        }
+        .frame(height: 450)
+    }
+}

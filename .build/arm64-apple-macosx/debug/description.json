@@ -1,0 +1,432 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+    "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem_DesignSystem.bundle/Assets.xcassets" : {
+      "inputs" : [
+        {
+          "kind" : "directory",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Resources/Assets.xcassets"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "directory",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem_DesignSystem.bundle/Assets.xcassets"
+        }
+      ]
+    }
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.DesignSystem-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/sources",
+      "importPath" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSButton.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSCard.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSListRow.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSTextField.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/FABView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Extensions/StateModifier.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Extensions/View+LiquidGlass.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Previews/DesignSystemPreviews.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/BrandIcon.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/Color+DesignSystem.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/Typography+DesignSystem.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/ViewState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DerivedSources/resource_bundle_accessor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<DesignSystem-arm64-apple-macosx26.0-debug.module-resources>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "DesignSystem",
+      "moduleOutputPath" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/Modules/DesignSystem.swiftmodule",
+      "objects" : [
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DSButton.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DSCard.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DSListRow.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DSTextField.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/FABView.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/StateModifier.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/View+LiquidGlass.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DesignSystemPreviews.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/BrandIcon.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/Color+DesignSystem.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/Typography+DesignSystem.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/ViewState.swift.o",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/resource_bundle_accessor.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j11",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+        "-module-cache-path",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/include/DesignSystem-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "designsystem"
+      ],
+      "outputFileMapPath" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DSButton.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DSCard.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DSListRow.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DSTextField.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/FABView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/StateModifier.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/View+LiquidGlass.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DesignSystemPreviews.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/BrandIcon.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/Color+DesignSystem.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/Typography+DesignSystem.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/ViewState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/Modules/DesignSystem.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSButton.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSCard.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSListRow.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSTextField.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/FABView.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Extensions/StateModifier.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Extensions/View+LiquidGlass.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Previews/DesignSystemPreviews.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/BrandIcon.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/Color+DesignSystem.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/Typography+DesignSystem.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/ViewState.swift",
+        "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DerivedSources/resource_bundle_accessor.swift"
+      ],
+      "tempsPath" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "DesignSystem" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "DesignSystem",
+      "-package-name",
+      "designsystem",
+      "-c",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSButton.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSCard.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSListRow.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSTextField.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/FABView.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Extensions/StateModifier.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Extensions/View+LiquidGlass.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Previews/DesignSystemPreviews.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/BrandIcon.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/Color+DesignSystem.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/Typography+DesignSystem.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/ViewState.swift",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DerivedSources/resource_bundle_accessor.swift",
+      "-I",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j11",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+      "-module-cache-path",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/include/DesignSystem-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "designsystem",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "DesignSystem" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSButton.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSCard.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSListRow.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/DSTextField.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Components/FABView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Extensions/StateModifier.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Extensions/View+LiquidGlass.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Previews/DesignSystemPreviews.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/BrandIcon.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/Color+DesignSystem.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/Typography+DesignSystem.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/Sources/DesignSystem/Tokens/ViewState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/DerivedSources/resource_bundle_accessor.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/DesignSystem.build/sources"
+    },
+    "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/joaoigor/Developer/Groupool/Groupool/Packages/DesignSystem/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

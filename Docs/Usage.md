@@ -43,6 +43,23 @@ DSCard(useLiquidGlass: true) {
 }
 ```
 
+### FABView
+
+A floating action button that expands into `Challenge`, `Expense`, and `Withdrawal`.
+
+```swift
+@State private var isExpanded = false
+
+FABView(
+    isExpanded: $isExpanded,
+    actionItems: [
+        .challenge { },
+        .expense(state: .error("Unavailable while account is pending.")) { },
+        .withdrawal { }
+    ]
+)
+```
+
 ### State Management Modifiers
 
 Using `dsState(_ state: ViewState)` wraps an entire view with contextual alerts, loadings, or error banners based on the passed state.
