@@ -20,3 +20,4 @@
 ## Behavior
 - The component is presentation-only.
 - Navigation and logout behavior are delegated through `onAvatarTap` and `onActionTap`.
+- The `Log Out` row is visually marked as destructive with danger color tokens.

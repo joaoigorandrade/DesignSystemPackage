@@ -10,6 +10,10 @@ public enum ProfileSummaryAction: String, Identifiable, CaseIterable, Sendable {
         rawValue
     }
 
+    var isDestructive: Bool {
+        self == .logOut
+    }
+
     var title: String {
         switch self {
         case .editProfile:
@@ -202,11 +206,11 @@ private struct ActionRow: View {
             HStack {
                 Text(action.title)
                     .font(.dsBody)
-                    .foregroundColor(.brandPrimary)
+                    .foregroundColor(action.isDestructive ? .danger : .brandPrimary)
                 Spacer()
                 BrandIcon.chevronRight
                     .view()
-                    .foregroundColor(.coolGrey)
+                    .foregroundColor(action.isDestructive ? .danger : .coolGrey)
             }
             .padding(.vertical, 10)
         }
