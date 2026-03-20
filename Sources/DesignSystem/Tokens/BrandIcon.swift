@@ -11,7 +11,11 @@ public enum BrandIcon: String {
     case challenge = "flag.checkered"
     case expense = "receipt"
     case withdrawal = "arrow.down.circle"
-    
+    case bell = "bell"
+    case target = "target"
+    case arrowRight = "arrow.right"
+    case person = "person.fill"
+
     public func view(scale: Image.Scale = .medium) -> some View {
         Image(systemName: self.rawValue)
             .symbolRenderingMode(.hierarchical)
