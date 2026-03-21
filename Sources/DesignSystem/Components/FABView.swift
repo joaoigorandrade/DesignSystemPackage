@@ -210,14 +210,10 @@ public struct FABView: View {
     }
 }
 
-private struct FABActionRow: View, Equatable {
+private struct FABActionRow: View {
     let item: FABActionItem
     let isTooltipVisible: Bool
     let onTap: () -> Void
-
-    static func == (lhs: FABActionRow, rhs: FABActionRow) -> Bool {
-        lhs.item == rhs.item && lhs.isTooltipVisible == rhs.isTooltipVisible
-    }
 
     var body: some View {
         rowContent
@@ -284,5 +280,11 @@ private struct FABActionRow: View, Equatable {
 
     private var backgroundColor: Color {
         item.isEnabled ? Color.white : Color.coolGrey.opacity(0.18)
+    }
+}
+
+extension FABActionRow: @preconcurrency Equatable {
+    static func == (lhs: FABActionRow, rhs: FABActionRow) -> Bool {
+        lhs.item == rhs.item && lhs.isTooltipVisible == rhs.isTooltipVisible
     }
 }
