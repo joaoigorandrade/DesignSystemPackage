@@ -261,10 +261,10 @@ private struct FABActionRow: View {
         if isTooltipVisible, let tooltip = item.tooltip {
             Text(tooltip)
                 .font(.dsFootnote)
-                .foregroundColor(.white)
+                .foregroundColor(.primary)
                 .padding(.vertical, 6)
                 .padding(.horizontal, 10)
-                .background(Color.black.opacity(0.85))
+                .background(.regularMaterial)
                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                 .transition(.opacity.combined(with: .move(edge: .trailing)))
         }
@@ -279,7 +279,7 @@ private struct FABActionRow: View {
     }
 
     private var backgroundColor: Color {
-        item.isEnabled ? Color.white : Color.coolGrey.opacity(0.18)
+        item.isEnabled ? Color(.secondarySystemBackground) : Color.coolGrey.opacity(0.18)
     }
 }
 
