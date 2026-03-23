@@ -60,6 +60,19 @@ FABView(
 )
 ```
 
+### DSSwitch
+
+A branded switch control for settings and preferences.
+
+```swift
+@State private var notificationsEnabled = true
+
+DSSwitch(
+    isOn: $notificationsEnabled,
+    accessibilityLabel: "Notifications"
+)
+```
+
 ### State Management Modifiers
 
 Using `dsState(_ state: ViewState)` wraps an entire view with contextual alerts, loadings, or error banners based on the passed state.

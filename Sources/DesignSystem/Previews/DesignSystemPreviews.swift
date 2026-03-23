@@ -49,6 +49,18 @@ struct FABView_Previews: PreviewProvider {
     }
 }
 
+struct DSSwitch_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack(spacing: 20) {
+            DSSwitch(isOn: .constant(false))
+            DSSwitch(isOn: .constant(true))
+            DSSwitch(isOn: .constant(false), isEnabled: false)
+        }
+        .padding()
+        .previewLayout(.sizeThatFits)
+    }
+}
+
 private struct FABPreviewContainer: View {
     @State private var isExpanded = false
 

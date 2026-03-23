@@ -11,7 +11,7 @@ let package = Package(
     targets: [
         .target(
             name: "DesignSystem",
-            exclude: ["Components/FABView.md"],
+            exclude: ["Components/FABView.md", "Components/DSSwitch.md"],
             resources: [.process("Resources")]
         )
     ]
