@@ -74,11 +74,15 @@ public struct DSAvatar: View {
         } else if let avatarURL {
             AsyncImage(url: avatarURL) { phase in
                 switch phase {
+                case .empty:
+                    ProgressView()
                 case .success(let image):
                     image
                         .resizable()
                         .scaledToFill()
-                default:
+                case .failure:
+                    initialsView
+                @unknown default:
                     initialsView
                 }
             }

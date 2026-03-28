@@ -49,34 +49,8 @@ struct FABView_Previews: PreviewProvider {
     }
 }
 
-struct DSSwitch_Previews: PreviewProvider {
+struct DSLoadingScreen_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 20) {
-            DSSwitch(isOn: .constant(false))
-            DSSwitch(isOn: .constant(true))
-            DSSwitch(isOn: .constant(false), isEnabled: false)
-        }
-        .padding()
-        .previewLayout(.sizeThatFits)
-    }
-}
-
-private struct FABPreviewContainer: View {
-    @State private var isExpanded = false
-
-    var body: some View {
-        ZStack {
-            Color.backgroundGrey.ignoresSafeArea()
-
-            FABView(
-                isExpanded: $isExpanded,
-                actionItems: [
-                    .challenge { },
-                    .expense(state: .error("Expense is unavailable for your current role.")) { },
-                    .withdrawal(state: .error("Withdrawal requires a verified account.")) { }
-                ]
-            )
-        }
-        .frame(height: 450)
+        DSLoadingScreen()
     }
 }
