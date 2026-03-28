@@ -57,9 +57,4 @@ public extension View {
             }
         }
     }
-
-    @available(*, deprecated, renamed: "dsLoadingOverlay(isLoading:gifName:bundle:message:)")
-    func dsLoadingOverlay(isLoading: Bool, animationName: String = "loading-screen", bundle: Bundle? = nil, message: String? = nil) -> some View {
-        dsLoadingOverlay(isLoading: isLoading, gifName: animationName, bundle: bundle, message: message)
-    }
 }

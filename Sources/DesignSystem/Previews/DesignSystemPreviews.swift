@@ -43,12 +43,6 @@ struct DSTextField_Previews: PreviewProvider {
     }
 }
 
-struct FABView_Previews: PreviewProvider {
-    static var previews: some View {
-        FABPreviewContainer()
-    }
-}
-
 struct DSLoadingScreen_Previews: PreviewProvider {
     static var previews: some View {
         DSLoadingScreen()
