@@ -179,16 +179,21 @@ public struct FABView: View {
     private func toggleExpanded() {
         selectedTooltipID = nil
         isExpanded.toggle()
+        DSHaptics.shared.play(event: .tapSecondary)
     }
 
-    private func collapse() {
+    private func collapse(playHaptic: Bool = true) {
         selectedTooltipID = nil
         isExpanded = false
+        if playHaptic {
+            DSHaptics.shared.play(event: .tapSecondary)
+        }
     }
 
     private func handleTap(for item: FABActionItem) {
         if item.isEnabled {
-            collapse()
+            collapse(playHaptic: false)
+            DSHaptics.shared.play(event: .selection)
             item.action()
             return
         }
@@ -197,6 +202,7 @@ public struct FABView: View {
             return
         }
 
+        DSHaptics.shared.play(event: .warning)
         selectedTooltipID = item.id
         tooltipTask?.cancel()
         tooltipTask = Task {

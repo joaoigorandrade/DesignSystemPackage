@@ -130,8 +130,7 @@ public struct DSAvatarCropper: View {
             .scaleEffect(scale)
             .offset(offset)
             .frame(width: cropSize, height: cropSize)
-            .clipShape(Circle())
-        
+
         let renderer = ImageRenderer(content: renderedView)
         renderer.scale = displayScale
         
