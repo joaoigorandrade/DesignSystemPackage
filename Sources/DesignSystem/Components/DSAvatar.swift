@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+import Kingfisher
 
 public enum DSAvatarSize {
     case small
@@ -35,6 +36,7 @@ public struct DSAvatar: View {
     public let initials: String
     public let size: DSAvatarSize
     public let isLoading: Bool
+    @State private var failedToLoad = false
 
     public init(
         avatarURL: URL? = nil,
@@ -71,21 +73,16 @@ public struct DSAvatar: View {
             Image(uiImage: previewImage)
                 .resizable()
                 .scaledToFill()
-        } else if let avatarURL {
-            AsyncImage(url: avatarURL) { phase in
-                switch phase {
-                case .empty:
+        } else if let avatarURL, !failedToLoad {
+            KFImage(avatarURL)
+                .placeholder {
                     ProgressView()
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFill()
-                case .failure:
-                    initialsView
-                @unknown default:
-                    initialsView
                 }
-            }
+                .onFailure { _ in
+                    failedToLoad = true
+                }
+                .resizable()
+                .scaledToFill()
         } else {
             initialsView
         }
