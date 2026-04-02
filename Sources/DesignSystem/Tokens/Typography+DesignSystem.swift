@@ -27,11 +27,31 @@ public struct DSTypographyModifier: ViewModifier {
 }
 
 public extension View {
+    func dsLargeTitle() -> some View {
+        self.modifier(DSTypographyModifier(font: .dsLargeTitle, weight: .bold))
+    }
+
+    func dsTitle() -> some View {
+        self.modifier(DSTypographyModifier(font: .dsTitle, weight: .bold))
+    }
+
     func dsHeadline() -> some View {
         self.modifier(DSTypographyModifier(font: .dsHeadline, weight: .semibold))
     }
     
     func dsBody() -> some View {
         self.modifier(DSTypographyModifier(font: .dsBody, weight: .regular))
+    }
+
+    func dsCallout() -> some View {
+        self.modifier(DSTypographyModifier(font: .dsCallout, weight: .regular))
+    }
+
+    func dsFootnote() -> some View {
+        self.modifier(DSTypographyModifier(font: .dsFootnote, weight: .regular))
+    }
+
+    func dsCaption() -> some View {
+        self.modifier(DSTypographyModifier(font: .dsCaption, weight: .regular))
     }
 }
