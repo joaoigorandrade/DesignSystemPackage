@@ -19,7 +19,6 @@ let package = Package(
                 .product(name: "Gifu", package: "Gifu"),
                 .product(name: "Kingfisher", package: "Kingfisher")
             ],
-            exclude: ["Components/FABView.md", "Components/DSSwitch.md", "Components/DSLoadingScreen.md", "Components/DSGIFView.md"],
             resources: [.process("Resources")]
         )
     ]
