@@ -6,6 +6,7 @@ public struct DSAutoCarousel<Item: Identifiable, Content: View>: View where Item
     private let autoAdvanceInterval: TimeInterval
     private let resumeDelay: TimeInterval
     private let content: (Item) -> Content
+    private let minimumAutoAdvanceInterval: TimeInterval = 0.1
 
     @State private var selectedIndex = 0
     @State private var resumeAt: Date?
@@ -59,7 +60,7 @@ public struct DSAutoCarousel<Item: Identifiable, Content: View>: View where Item
     }
 
     private var timer: Publishers.Autoconnect<Timer.TimerPublisher> {
-        Timer.publish(every: autoAdvanceInterval, on: .main, in: .common)
+        Timer.publish(every: max(minimumAutoAdvanceInterval, autoAdvanceInterval), on: .main, in: .common)
             .autoconnect()
     }
 

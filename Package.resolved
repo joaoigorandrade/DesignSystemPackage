@@ -1,0 +1,24 @@
+{
+  "originHash" : "d8cd236882143500b0911531a20b000712716cda343ae35dd3fda96eaeb89ec9",
+  "pins" : [
+    {
+      "identity" : "gifu",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kaishin/Gifu.git",
+      "state" : {
+        "revision" : "f19726eaf0dfa4dbce4d3f80293c9d38c2acba53",
+        "version" : "4.0.1"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "c152c1915f60c51e4afa0752656993ee5b3c63db",
+        "version" : "8.8.1"
+      }
+    }
+  ],
+  "version" : 3
+}
