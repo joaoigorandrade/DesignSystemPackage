@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct DSStatusDistributionSegment: Identifiable, Equatable {
+public struct DSSegment: Identifiable, Equatable {
     public let id: String
     public let value: Double
     public let color: Color
@@ -44,7 +44,7 @@ public struct DSStatusContinuousStyle {
 }
 
 public struct DSStatusBar: View {
-    public let segments: [DSStatusDistributionSegment]
+    public let segments: [DSSegment]
     public let barHeight: CGFloat
     public let barBackgroundColor: Color
 
@@ -69,7 +69,7 @@ public struct DSStatusBar: View {
     private var visibleRatio: Double { appeared ? 1.0 : 0.0 }
 
     public init(
-        segments: [DSStatusDistributionSegment],
+        segments: [DSSegment],
         barHeight: CGFloat = DSSpacing.space8,
         barBackgroundColor: Color = .coolGrey.opacity(0.2)
     ) {
@@ -120,20 +120,19 @@ private struct NormalizedSegment: Identifiable, Equatable {
     VStack(spacing: DSSpacing.space16) {
         DSStatusBar(
             segments: [
-                DSStatusDistributionSegment(id: "available", value: 0.52, color: .brandPrimary),
-                DSStatusDistributionSegment(id: "frozen", value: 0.28, color: .coolGrey),
-                DSStatusDistributionSegment(id: "debt", value: 0.20, color: .danger)
+                DSSegment(id: "available", value: 0.52, color: .brandPrimary),
+                DSSegment(id: "frozen", value: 0.28, color: .coolGrey),
+                DSSegment(id: "debt", value: 0.20, color: .danger)
             ],
         )
 
         DSStatusBar(
             segments: [
-                DSStatusDistributionSegment(id: "stocks", value: 0, color: .success),
-                DSStatusDistributionSegment(id: "bonds", value: 0, color: .info),
-                DSStatusDistributionSegment(id: "cash", value: 0, color: .warning)
+                DSSegment(id: "stocks", value: 0, color: .success),
+                DSSegment(id: "bonds", value: 0, color: .info),
+                DSSegment(id: "cash", value: 0, color: .warning)
             ],
         )
     }
     .padding()
-    .background(Color.backgroundTop)
 }
