@@ -20,6 +20,10 @@ let package = Package(
                 .product(name: "Kingfisher", package: "Kingfisher")
             ],
             resources: [.process("Resources")]
+        ),
+        .testTarget(
+            name: "DesignSystemTests",
+            dependencies: ["DesignSystem"]
         )
     ]
 )
