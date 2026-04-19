@@ -4,22 +4,22 @@ import PackageDescription
 
 let package = Package(
     name: "DesignSystem",
-    platforms: [.iOS(.v26)],
+    platforms: [
+        .iOS(.v26),
+        .macOS(.v15)
+    ],
     products: [
         .library(name: "DesignSystem", targets: ["DesignSystem"])
     ],
-    dependencies: [
-        .package(url: "https://github.com/kaishin/Gifu.git", from: "4.0.1"),
-        .package(url: "https://github.com/onevcat/Kingfisher.git", from: "8.3.0")
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "DesignSystem",
-            dependencies: [
-                .product(name: "Gifu", package: "Gifu"),
-                .product(name: "Kingfisher", package: "Kingfisher")
-            ],
-            resources: [.process("Resources")]
+            dependencies: [],
+            resources: [
+                .process("Resources"),
+                .copy("Theme/DesignTokenReference.md")
+            ]
         ),
         .testTarget(
             name: "DesignSystemTests",
