@@ -1,4 +1,5 @@
 import SwiftUI
+import Kingfisher
 
 public struct GroupoolAvatar: View {
     @Environment(\.groupoolTheme) private var theme
@@ -6,35 +7,32 @@ public struct GroupoolAvatar: View {
     private let name: String
     private let size: CGFloat
     private let status: GroupoolStatusDotKind?
+    private let avatarURL: URL?
 
-    public init(name: String, size: CGFloat = 40, status: GroupoolStatusDotKind? = nil) {
+    public init(name: String, size: CGFloat = 40, status: GroupoolStatusDotKind? = nil, avatarURL: URL? = nil) {
         self.name = name
         self.size = size
         self.status = status
+        self.avatarURL = avatarURL
     }
 
     public var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            Circle()
-                .fill(
-                    LinearGradient(
-                        colors: palette,
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-                .frame(width: size, height: size)
-                .overlay(
-                    Text(initials)
-                        .font(GroupoolTypography.font(.bodyStrong, theme: theme))
-                        .foregroundStyle(.white)
-                )
+            avatarContent
             if let status {
                 GroupoolStatusDot(status)
                     .offset(x: 2, y: 2)
             }
         }
         .frame(width: size, height: size)
+    }
+
+    var content: GroupoolAvatarContent {
+        guard let avatarURL else {
+            return .initials(initials)
+        }
+
+        return .remoteImage(avatarURL)
     }
 
     private var initials: String {
@@ -61,4 +59,44 @@ public struct GroupoolAvatar: View {
         let first = Int(name.unicodeScalars.first?.value ?? 0)
         return palettes[first % palettes.count]
     }
+
+    @ViewBuilder
+    private var avatarContent: some View {
+        switch content {
+        case .initials:
+            avatarPlaceholder
+        case .remoteImage(let avatarURL):
+            avatarPlaceholder
+                .overlay {
+                    KFImage(avatarURL)
+                        .resizable()
+                        .cancelOnDisappear(true)
+                        .scaledToFill()
+                        .frame(width: size, height: size)
+                        .clipShape(Circle())
+                }
+        }
+    }
+
+    private var avatarPlaceholder: some View {
+        Circle()
+            .fill(
+                LinearGradient(
+                    colors: palette,
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+            )
+            .frame(width: size, height: size)
+            .overlay(
+                Text(initials)
+                    .font(GroupoolTypography.font(.bodyStrong, theme: theme))
+                    .foregroundStyle(.white)
+            )
+    }
+}
+
+enum GroupoolAvatarContent: Equatable {
+    case initials(String)
+    case remoteImage(URL)
 }

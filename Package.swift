@@ -11,11 +11,15 @@ let package = Package(
     products: [
         .library(name: "DesignSystem", targets: ["DesignSystem"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/onevcat/Kingfisher.git", from: "8.0.0")
+    ],
     targets: [
         .target(
             name: "DesignSystem",
-            dependencies: [],
+            dependencies: [
+                .product(name: "Kingfisher", package: "Kingfisher")
+            ],
             resources: [
                 .process("Resources"),
                 .copy("Theme/DesignTokenReference.md")

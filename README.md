@@ -210,8 +210,8 @@ GPTabBarView(activeTab: $tab) { selected in
     navigate(to: selected)
 }
 
-GPFloatingActionButton(options: fabOptions) { option in
-    handle(option)
+GPFloatingButton {
+    openQuickActions()
 }
 ```
 
@@ -279,7 +279,7 @@ GPQRPlaceholderView(size: 200)
 | Screen | Components |
 |---|---|
 | Splash / Onboarding | `PoolMascotView`, `GPTopBarView`, `GPButton (.pool)`, `GPTextField`, `GPOTPBoxView` |
-| Home dashboard | `GroupoolMarkView`, `GPStatusBannerView`, `GPCard`, `GPWaterFillView`, `GPAvatarView`, `GPActivityRowView`, `GPTabBarView`, `GPFloatingActionButton` |
+| Home dashboard | `GroupoolMarkView`, `GPStatusBannerView`, `GPCard`, `GPWaterFillView`, `GPAvatarView`, `GPActivityRowView`, `GPTabBarView`, `GPFloatingButton` |
 | Invite / PIX payment | `GPCard`, `GPPillView`, `GPProofThumbView`, `GPQRPlaceholderView`, `GPButton` |
 | Challenge create | `GPTopBarView`, `GPStepperView`, `GPPickerRowView`, `GPMemberChipView`, `GPOutcomeRowView`, `GPTextField` |
 | Challenge vote | `GPTopBarView`, `GPVoteOptionView`, `GPProofThumbView`, `GPButton (.pool)` |

@@ -78,6 +78,35 @@ struct DesignSystemTests {
         #expect(blue.pool != teal.pool)
     }
 
+    @Test("Semantic color assets include dark mode variants")
+    func test_semanticColorAssets_includeDarkModeVariants() throws {
+        let assetNames = [
+            "Background",
+            "Surface",
+            "Ink",
+            "InkSecondary",
+            "InkTertiary",
+            "Line",
+            "LineSecondary"
+        ]
+
+        for assetName in assetNames {
+            let contents = try loadColorAssetContents(named: assetName)
+            let colors = try #require(contents["colors"] as? [[String: Any]])
+            let hasDarkAppearance = colors.contains { entry in
+                guard let appearances = entry["appearances"] as? [[String: String]] else {
+                    return false
+                }
+
+                return appearances.contains {
+                    $0["appearance"] == "luminosity" && $0["value"] == "dark"
+                }
+            }
+
+            #expect(hasDarkAppearance)
+        }
+    }
+
     // MARK: - GPTypes
 
     @Test("GPMemberStatus covers all five status variants")
@@ -177,6 +206,21 @@ struct DesignSystemTests {
         let zzz = paletteIndex(for: "Zzz")
         #expect(ana != zzz)
     }
+
+    @Test("Avatar content uses remote image when URL is provided")
+    func test_avatarContent_withAvatarURL_usesRemoteImage() throws {
+        let avatarURL = try #require(URL(string: "https://example.com/avatar.png"))
+        let sut = makeAvatarSUT(avatarURL: avatarURL)
+
+        #expect(sut.content == .remoteImage(avatarURL))
+    }
+
+    @Test("Avatar content falls back to initials when URL is missing")
+    func test_avatarContent_withoutAvatarURL_usesInitials() {
+        let sut = makeAvatarSUT()
+
+        #expect(sut.content == .initials("JI"))
+    }
 }
 
 // MARK: - Helpers
@@ -204,6 +248,30 @@ private extension DesignSystemTests {
     func paletteIndex(for name: String) -> Int {
         let first = Int(name.unicodeScalars.first?.value ?? 0)
         return first % 8
+    }
+
+    func makeAvatarSUT(
+        name: String = "João Igor",
+        size: CGFloat = 40,
+        status: GroupoolStatusDotKind? = nil,
+        avatarURL: URL? = nil
+    ) -> GroupoolAvatar {
+        GroupoolAvatar(name: name, size: size, status: status, avatarURL: avatarURL)
+    }
+
+    func loadColorAssetContents(named assetName: String) throws -> [String: Any] {
+        let testsDirectory = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent()
+        let packageDirectory = testsDirectory
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+        let assetURL = packageDirectory
+            .appendingPathComponent("Sources/DesignSystem/Resources/Colors.xcassets")
+            .appendingPathComponent("\(assetName).colorset")
+            .appendingPathComponent("Contents.json")
+        let data = try Data(contentsOf: assetURL)
+        let json = try JSONSerialization.jsonObject(with: data)
+        return try #require(json as? [String: Any])
     }
 }
 #endif

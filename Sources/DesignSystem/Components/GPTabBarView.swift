@@ -45,7 +45,7 @@ public struct GPTabBarView: View {
                     action(tab)
                 } label: {
                     VStack(spacing: 3) {
-                        GPIcon(tab.icon, size: 20, color: tab == activeTab ? theme.pool : theme.inkTertiary)
+                        GPIcon(tab.icon, size: 16, color: tab == activeTab ? theme.pool : theme.inkTertiary)
                         Text(tab.title)
                             .groupoolTextStyle(.label, color: tab == activeTab ? theme.pool : theme.inkTertiary)
                     }
@@ -57,7 +57,6 @@ public struct GPTabBarView: View {
         }
         .padding(.horizontal, 12)
         .padding(.top, 10)
-        .padding(.bottom, 26)
         .background(theme.surface)
         .overlay(alignment: .top) {
             Rectangle()

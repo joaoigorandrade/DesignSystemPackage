@@ -57,7 +57,6 @@ public struct GPScreenContainer<Header: View, Content: View, BottomBar: View>: V
                         .padding(.top, GPScreenMetrics.topPadding)
                         .padding(.bottom, GPScreenMetrics.contentSpacing)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(headerBackground)
 
                     content
                         .padding(.horizontal, GPScreenMetrics.horizontalPadding)
@@ -148,7 +147,6 @@ public struct GPBottomBar<Content: View>: View {
 #Preview("Screen Container") {
     GPScreenContainer(headerStyle: .gradientWash) {
         VStack(alignment: .leading, spacing: 8) {
-            GPTopBarView(onBack: {})
             Text("Join Groupool")
                 .gpDisplay(size: 32)
             Text("Shared pools for groups who trust each other.")

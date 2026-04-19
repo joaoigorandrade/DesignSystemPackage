@@ -4,18 +4,21 @@ public struct GPAvatarView: View {
     private let name: String
     private let size: CGFloat
     private let status: GPMemberStatus?
+    private let avatarURL: URL?
 
-    public init(name: String, size: CGFloat = 40, status: GPMemberStatus? = nil) {
+    public init(name: String, size: CGFloat = 40, status: GPMemberStatus? = nil, avatarURL: URL? = nil) {
         self.name = name
         self.size = size
         self.status = status
+        self.avatarURL = avatarURL
     }
 
     public var body: some View {
         GroupoolAvatar(
             name: name,
             size: size,
-            status: status.map(\.dotKind)
+            status: status.map(\.dotKind),
+            avatarURL: avatarURL
         )
     }
 }

@@ -22,25 +22,14 @@ public struct GroupoolPill<Leading: View>: View {
     }
 
     public var body: some View {
-        HStack(spacing: 6) {
+        HStack(spacing: 0) {
             leading
             Text(text)
                 .groupoolTextStyle(.caption, color: foregroundColor)
         }
-        .padding(.horizontal, 10)
+        .padding(.horizontal, 4)
         .frame(height: 24)
-        .background(backgroundColor)
         .clipShape(Capsule())
-    }
-
-    private var backgroundColor: Color {
-        switch variant {
-        case .good: theme.good.opacity(0.15)
-        case .warning: theme.warning.opacity(0.16)
-        case .bad: theme.bad.opacity(0.15)
-        case .pool: theme.poolSoft
-        case .neutral: theme.line
-        }
     }
 
     private var foregroundColor: Color {
@@ -147,25 +136,34 @@ public struct GroupoolWaterFill: View {
                 RoundedRectangle(cornerRadius: max(GroupoolRadius.medium(for: theme) - 4, 0), style: .continuous)
                     .fill(theme.poolDeep)
                     .padding(4)
-                VStack(spacing: 0) {
-                    Spacer(minLength: 0)
-                    ZStack(alignment: .top) {
-                        RoundedRectangle(cornerRadius: max(GroupoolRadius.medium(for: theme) - 4, 0), style: .continuous)
-                            .fill(
-                                LinearGradient(
-                                    colors: [theme.pool, theme.poolDeep],
-                                    startPoint: .top,
-                                    endPoint: .bottom
-                                )
-                            )
-                        GroupoolWaveShape()
-                            .fill(theme.pool)
-                            .frame(height: 8)
-                            .offset(y: -4)
+                    .overlay {
+                        VStack(spacing: 0) {
+                            Spacer(minLength: 0)
+                            if progress > 0 {
+                                ZStack(alignment: .top) {
+                                    
+                                    RoundedRectangle(cornerRadius: max(GroupoolRadius.medium(for: theme) - 4, 0), style: .continuous)
+                                        .fill(
+                                            LinearGradient(
+                                                colors: [theme.pool, theme.poolDeep],
+                                                startPoint: .top,
+                                                endPoint: .bottom
+                                            )
+                                        )
+                                        .padding(.bottom, 4)
+                                    
+                                    if progress < 0.9 {
+                                        GroupoolWaveShape()
+                                            .fill(theme.pool)
+                                            .frame(height: 8)
+                                            .offset(y: -4)
+                                    }
+                                }
+                                .frame(height: max((height - 8) * progress, 0))
+                                .padding(4)
+                            }
+                        }
                     }
-                    .frame(height: max((height - 8) * progress, 0))
-                    .padding(4)
-                }
                 if let label {
                     Text(label)
                         .groupoolTextStyle(.caption, color: .white)
