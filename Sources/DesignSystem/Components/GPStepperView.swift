@@ -34,6 +34,7 @@ public struct GPStepperView: View {
             Circle()
                 .fill(isCompleted || isCurrent ? theme.pool : theme.lineSecondary)
                 .frame(width: 28, height: 28)
+                .shadow(radius: 8)
             if isCompleted {
                 Image(systemName: "checkmark")
                     .font(.system(size: 11, weight: .bold))

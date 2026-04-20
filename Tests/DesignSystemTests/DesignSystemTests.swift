@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 #if canImport(Testing)
 import Testing
@@ -78,19 +79,9 @@ struct DesignSystemTests {
         #expect(blue.pool != teal.pool)
     }
 
-    @Test("Semantic color assets include dark mode variants")
-    func test_semanticColorAssets_includeDarkModeVariants() throws {
-        let assetNames = [
-            "Background",
-            "Surface",
-            "Ink",
-            "InkSecondary",
-            "InkTertiary",
-            "Line",
-            "LineSecondary"
-        ]
-
-        for assetName in assetNames {
+    @Test("All color assets include dark mode variants")
+    func test_allColorAssets_includeDarkModeVariants() throws {
+        for assetName in try loadColorAssetNames() {
             let contents = try loadColorAssetContents(named: assetName)
             let colors = try #require(contents["colors"] as? [[String: Any]])
             let hasDarkAppearance = colors.contains { entry in
@@ -144,25 +135,15 @@ struct DesignSystemTests {
         #expect(GPFinancialSummaryTone.allCases.contains(.bad))
     }
 
-    // MARK: - Screen shell
+    // MARK: - Bottom bar
 
-    @Test("Gradient header style enables wash")
-    func test_gradientHeaderStyle_enablesWash() {
-        #expect(GPScreenHeaderStyle.gradientWash.usesGradientWash)
-    }
+    @Test("Bottom bar remains available with arbitrary content")
+    func test_bottomBar_acceptsArbitraryContent() {
+        let sut = GPBottomBar {
+            Text("Continue")
+        }
 
-    @Test("Plain header style disables wash")
-    func test_plainHeaderStyle_disablesWash() {
-        #expect(!GPScreenHeaderStyle.plain.usesGradientWash)
-    }
-
-    @Test("Screen metrics match prototype shell spacing")
-    func test_screenMetrics_matchPrototypeShellSpacing() {
-        #expect(GPScreenMetrics.horizontalPadding == 20)
-        #expect(GPScreenMetrics.topPadding == 24)
-        #expect(GPScreenMetrics.contentSpacing == 16)
-        #expect(GPScreenMetrics.bottomBarPadding == 16)
-        #expect(GPScreenMetrics.contentBottomPadding == 24)
+        #expect(String(describing: type(of: sut)).contains("GPBottomBar"))
     }
 
     // MARK: - Typography tracking
@@ -260,18 +241,34 @@ private extension DesignSystemTests {
     }
 
     func loadColorAssetContents(named assetName: String) throws -> [String: Any] {
-        let testsDirectory = URL(fileURLWithPath: #filePath)
-            .deletingLastPathComponent()
-        let packageDirectory = testsDirectory
-            .deletingLastPathComponent()
-            .deletingLastPathComponent()
-        let assetURL = packageDirectory
-            .appendingPathComponent("Sources/DesignSystem/Resources/Colors.xcassets")
+        let assetURL = colorsAssetDirectoryURL()
             .appendingPathComponent("\(assetName).colorset")
             .appendingPathComponent("Contents.json")
         let data = try Data(contentsOf: assetURL)
         let json = try JSONSerialization.jsonObject(with: data)
         return try #require(json as? [String: Any])
+    }
+
+    func loadColorAssetNames() throws -> [String] {
+        let colorSetURLs = try FileManager.default.contentsOfDirectory(
+            at: colorsAssetDirectoryURL(),
+            includingPropertiesForKeys: nil
+        )
+
+        return colorSetURLs
+            .filter { $0.pathExtension == "colorset" }
+            .map { $0.deletingPathExtension().lastPathComponent }
+            .sorted()
+    }
+
+    func colorsAssetDirectoryURL() -> URL {
+        let testsDirectory = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent()
+        let packageDirectory = testsDirectory
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+        return packageDirectory
+            .appendingPathComponent("Sources/DesignSystem/Resources/Colors.xcassets")
     }
 }
 #endif

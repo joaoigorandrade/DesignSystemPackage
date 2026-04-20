@@ -15,7 +15,7 @@ public struct GroupoolTopBar: View {
 
     public var body: some View {
         HStack {
-            circularButton("chevron-left", action: onBack)
+            circularButton("chevron.left", action: onBack)
             Spacer()
             if let step, let total {
                 HStack(spacing: 4) {

@@ -179,11 +179,17 @@ GPCard(padding: 0) {
     GPListRow { /* leading */ } content: { /* main */ } trailing: { /* trailing */ }
 }
 
-GPScreenContainer(headerStyle: .gradientWash) {
-    GPTopBarView(onBack: {})
-} content: {
-    GPCard { Text("Scrollable content") }
-} bottomBar: {
+ZStack {
+    Color.groupoolBackground.ignoresSafeArea()
+
+    ScrollView {
+        GPCard { Text("Scrollable content") }
+            .padding(.horizontal, 20)
+            .padding(.top, 24)
+            .padding(.bottom, 24)
+    }
+}
+.safeAreaInset(edge: .bottom, spacing: 0) {
     GPBottomBar {
         Button("Continue") {}
             .buttonStyle(.gp(.primary, fullWidth: true))
@@ -245,20 +251,28 @@ GPTrackBadgeView("Ativo", variant: .good)
 GPStepperView(currentStep: 3, totalSteps: 5)
 ```
 
-### Screen Shell
+### Screen Layout
 
 ```swift
-GPScreenContainer(headerStyle: .gradientWash) {
-    VStack(alignment: .leading, spacing: 8) {
-        GPTopBarView(onBack: {}, step: 2, total: 5)
-        Text("Create challenge")
-            .gpDisplay(size: 28)
+ZStack {
+    Color.groupoolBackground.ignoresSafeArea()
+
+    ScrollView {
+        VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 8) {
+                GPTopBarView(onBack: {}, step: 2, total: 5)
+                Text("Create challenge")
+                    .gpDisplay(size: 28)
+            }
+
+            GPCard { Text("Step content") }
+        }
+        .padding(.horizontal, 20)
+        .padding(.top, 24)
+        .padding(.bottom, 24)
     }
-} content: {
-    VStack(spacing: 16) {
-        GPCard { Text("Step content") }
-    }
-} bottomBar: {
+}
+.safeAreaInset(edge: .bottom, spacing: 0) {
     GPBottomBar {
         Button("Continue") {}
             .buttonStyle(.gp(.pool, fullWidth: true))
