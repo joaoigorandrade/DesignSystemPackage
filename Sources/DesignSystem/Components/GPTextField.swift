@@ -1,11 +1,39 @@
 import SwiftUI
 
+public enum GPTextFieldMask: Sendable {
+    case brazilianPhone
+
+    public func apply(_ value: String) -> String {
+        switch self {
+        case .brazilianPhone:
+            let digits = String(value.filter(\.isNumber).prefix(11))
+            guard !digits.isEmpty else { return "" }
+
+            if digits.count <= 2 {
+                return digits
+            }
+
+            let areaCode = String(digits.prefix(2))
+            let rest = String(digits.dropFirst(2))
+
+            if rest.count <= 5 {
+                return "(\(areaCode)) \(rest)"
+            }
+
+            let prefix = String(rest.prefix(5))
+            let suffix = String(rest.dropFirst(5))
+            return "(\(areaCode)) \(prefix)-\(suffix)"
+        }
+    }
+}
+
 public struct GPTextField<Leading: View, Trailing: View>: View {
     private let title: String?
     @Binding private var text: String
     private let prompt: String
     private let isMultiline: Bool
     private let isBig: Bool
+    private let mask: GPTextFieldMask?
     private let leading: Leading
     private let trailing: Trailing
 
@@ -15,6 +43,7 @@ public struct GPTextField<Leading: View, Trailing: View>: View {
         prompt: String = "",
         isMultiline: Bool = false,
         isBig: Bool = false,
+        mask: GPTextFieldMask? = nil,
         @ViewBuilder prefix: () -> Leading = { EmptyView() },
         @ViewBuilder suffix: () -> Trailing = { EmptyView() }
     ) {
@@ -23,6 +52,7 @@ public struct GPTextField<Leading: View, Trailing: View>: View {
         self.prompt = prompt
         self.isMultiline = isMultiline
         self.isBig = isBig
+        self.mask = mask
         self.leading = prefix()
         self.trailing = suffix()
     }
@@ -30,12 +60,25 @@ public struct GPTextField<Leading: View, Trailing: View>: View {
     public var body: some View {
         GroupoolInputField(
             title: title,
-            text: $text,
+            text: maskedTextBinding,
             prompt: prompt,
             isMultiline: isMultiline,
             isLarge: isBig,
             leading: { leading },
             trailing: { trailing }
+        )
+    }
+
+    private var maskedTextBinding: Binding<String> {
+        Binding(
+            get: { text },
+            set: { newValue in
+                guard let mask else {
+                    text = newValue
+                    return
+                }
+                text = mask.apply(newValue)
+            }
         )
     }
 }
