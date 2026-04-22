@@ -13,7 +13,7 @@ public enum GroupoolStatusBannerKind: CaseIterable, Sendable {
         case .inactive: "clock"
         case .debt: "flag"
         case .warning: "exclamationmark"
-        case .success: "check"
+        case .success: "checkmark"
         }
     }
 }

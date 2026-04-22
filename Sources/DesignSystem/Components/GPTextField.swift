@@ -60,26 +60,27 @@ public struct GPTextField<Leading: View, Trailing: View>: View {
     public var body: some View {
         GroupoolInputField(
             title: title,
-            text: maskedTextBinding,
+            text: $text,
             prompt: prompt,
             isMultiline: isMultiline,
             isLarge: isBig,
             leading: { leading },
             trailing: { trailing }
         )
-    }
-
-    private var maskedTextBinding: Binding<String> {
-        Binding(
-            get: { text },
-            set: { newValue in
-                guard let mask else {
-                    text = newValue
-                    return
-                }
-                text = mask.apply(newValue)
+        .onAppear {
+            guard let mask else { return }
+            let masked = mask.apply(text)
+            if masked != text {
+                text = masked
             }
-        )
+        }
+        .onChange(of: text) { _, newValue in
+            guard let mask else { return }
+            let masked = mask.apply(newValue)
+            if masked != newValue {
+                text = masked
+            }
+        }
     }
 }
 

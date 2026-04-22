@@ -97,7 +97,7 @@ public struct GroupoolMemberChip: View {
                         Circle()
                             .fill(theme.pool)
                             .frame(width: 22, height: 22)
-                        GroupoolIcon("check", size: 14, color: .white)
+                        GroupoolIcon("checkmark", size: 14, color: .white)
                     }
                 }
             }
